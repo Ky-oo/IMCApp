@@ -1,6 +1,8 @@
 package com.example.ap_project;
 
-public class Personne {
+import java.io.Serializable;
+
+public class Personne implements Serializable {
 
     private String pseudo;
     private Float taille;

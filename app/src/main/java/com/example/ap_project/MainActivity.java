@@ -2,6 +2,7 @@ package com.example.ap_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -29,7 +30,11 @@ public class MainActivity extends AppCompatActivity {
                 float masse = Float.parseFloat(binding.editTextMasse.getText().toString());
                 String pseudo = binding.editTextPseudo.getText().toString();
                 unePersonne = new Personne(taille, masse, pseudo);
-                binding.textViewResult.setText(String.valueOf(unePersonne.interpretationIMC()));
+
+
+                Intent myIntent = new Intent(getApplicationContext(), ResultImcActivity.class);
+                myIntent.putExtra("Personne", unePersonne);
+                startActivity(myIntent);
             }
         });
 
